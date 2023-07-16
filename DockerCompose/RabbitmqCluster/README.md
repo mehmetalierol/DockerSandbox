@@ -1,18 +1,25 @@
 docker-compose.yml dosyasını bilgisayarınıza indirin
+
 Download the docker-compose.yml file to your local storage
+
 
 dosyayı indirdiğiniz dizine giderek komut satırında "run docker compose up -d" komutunu çalıştırın
 
 Go to directory that contains docker-compose.yml file and than "run docker compose up -d" command in command line 
+
 
 Docker desktop üzerinde 3 farklı container oluştuğunu gördüğünüzde her bir slave node için aşağıdaki komutları adım adım yazın
 
 When you saw the container running inside docker desktop go each slave nodes terminal and type the below commands step by step
 
 rabbitmqctl stop_app
+
 rabbitmqctl reset
+
 rabbitmqctl join_cluster rabbit@master-rabbitmq
+
 rabbitmqctl start_app
+
 
 Yeni bir slave node eklemek için aşağıdaki docker run komutunu çalıştırıp sonrasında yukarıdaki komutları oluşan konteynerin terminaline yazarak clustera dahil edebilirsiniz.
 
