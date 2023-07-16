@@ -39,3 +39,8 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public."MailLog"
     OWNER to postgres;
+    
+INSERT INTO public."CrudTest"(
+	"Id", "NameSurname", "Email", "Title", "Phone", "Creator")
+	VALUES ('00759a90-9c8d-4df7-8ad7-41e13eecb1d1', 'Name Surname', 'mail@mail.com', 'CL', '09998887766', '00759a90-9c8d-4df7-8ad7-41e13eecb1d1');
+COMMIT;
