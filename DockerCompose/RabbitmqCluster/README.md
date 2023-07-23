@@ -1,4 +1,5 @@
 docker-compose.yml dosyasını bilgisayarınıza indirin
+
 Download the docker-compose.yml file to your local storage
 
 dosyayı indirdiğiniz dizine giderek komut satırında "run docker compose up -d" komutunu çalıştırın

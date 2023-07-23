@@ -23,8 +23,10 @@ services:
         - RABBITMQ_DEFAULT_USER=admin
         - RABBITMQ_DEFAULT_PASS=123456
       ports:
+        - "4368:4369"
         - "5671:5672"
         - "15671:15672"
+        - "25671:25672"
 
   slave2-rabbitmq:
       image: rabbitmq:3-management
@@ -36,5 +38,37 @@ services:
         - RABBITMQ_DEFAULT_USER=admin
         - RABBITMQ_DEFAULT_PASS=123456
       ports:
+        - "4367:4369"
         - "5670:5672"
         - "15670:15672"
+        - "25670:25672"
+        
+  slave3-rabbitmq:
+      image: rabbitmq:3-management
+      hostname: slave3-rabbitmq
+      links:
+        - "master-rabbitmq:master-rabbitmq"
+      environment:
+        - RABBITMQ_ERLANG_COOKIE=47562945-1da9-4151-bbbb-2bffb1d8d7e0
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=123456
+      ports:
+        - "4366:4369"
+        - "5669:5672"
+        - "15669:15672"
+        - "25669:25672"
+     
+  slave4-rabbitmq:
+      image: rabbitmq:3-management
+      hostname: slave4-rabbitmq
+      links:
+        - "master-rabbitmq:master-rabbitmq"
+      environment:
+        - RABBITMQ_ERLANG_COOKIE=47562945-1da9-4151-bbbb-2bffb1d8d7e0
+        - RABBITMQ_DEFAULT_USER=admin
+        - RABBITMQ_DEFAULT_PASS=123456
+      ports:
+        - "4365:4369"
+        - "5668:5672"
+        - "15668:15672"
+        - "25668:25672"
